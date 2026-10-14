@@ -1,0 +1,370 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--background-color);
+}
+
+a {
+  text-decoration: none;
+  color: var(--black-color);
+}
+
+p {
+  line-height: 1.7;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  line-height: 2.2;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+ /*------------------------------------------------------------------------ */
+/* Header */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20px;
+  
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  width: 100%;
+}
+
+.header a {
+  color: var(--white-color);
+}
+
+.header ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+
+.header ul li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 10px;
+  border: 2px solid var(--black-color);
+  background-color: var(--white-color);
+  color: var(--black-color);
+  border-radius: 20px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.header ul li a:hover {
+  background-color: var(--black-color);
+  color: var(--white-color);
+}
+
+.header ul li a svg {
+  margin-right: 5px;
+}
+
+.heading {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 50px;
+  padding: 0 20px;
+  width: 100vw;
+  margin-bottom: 20px;
+  margin-top: 40px;
+}
+
+.heading p {
+  color: var(--light-text-color);
+}
+
+.dashboard h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  color: var(--secondary-color);
+}
+
+.login-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 900px;
+  width: 100vw;
+  background-color: var(--background-color);
+}
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 600px;
+  border: 2px solid var(--primary-color);
+  border-radius: 10px;
+  background-color: var(--white-color);
+}
+
+.content {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.form-group {
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 20px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1.5px solid var(--border-color);
+  border-radius: 5px;
+  margin-bottom: 10px;
+  font-family: inherit;
+}
+
+.form-group label {
+  text-align: left;
+  display: block;
+  margin: 0 0 5px 3px;
+}
+
+.btn-reverse {
+  background: var(--white-color);
+  color: var(--black-color);
+}
+
+.btn-block {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.btn:hover {
+  border: 2px solid var(--white-color);
+  background: var(--black-color);
+  color: var(--white-color);
+}
+
+.loadingSpinnerContainer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: var(--shadow-color);
+  z-index: 5000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loadingSpinner {
+  width: 64px;
+  height: 64px;
+  border: 8px solid;
+  border-color: var(--black-color) transparent #555 transparent;
+  border-radius: 50%;
+  animation: spin 1.2s linear infinite;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  background-color: var(--white-color-no-cambia);
+  border-radius: 999px;
+  padding: 3px 10px;
+  
+  flex: 1;
+  max-width: 600px;
+  height: 36px;
+  transform: translateY(-5px);
+}
+
+.search-bar input[type="text"] {
+  border: none;
+  outline: none;
+  padding: 6px 10px;
+  font-size: 14px;
+  border-radius: 999px;
+  flex: 1;
+  font-family: 'Poppins', sans-serif;
+}
+
+.search-bar button {
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  padding-left: 6px;
+  color: var(--text-color-no-cambia);
+}
+
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.dashboard__title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.asset-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+.image-container {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 0.375rem;
+  background-color: var(--background-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.asset-card {
+  flex: 0 0 300px;
+  width: 300px;
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  box-shadow: 0 1px 2px var(--shadow-color);
+  background: var(--white-color);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.asset-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 6px var(--shadow-color);
+}
+
+.asset-card__thumb {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.asset-card__name {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+}
+
+.asset-card__category {
+  font-size: 0.875rem;
+  color: var(--light-text-color);
+}
+
+.asset-card__desc {
+  margin-top: 0.5rem;
+  color: var(--text-color);
+}
+
+/* Ajuste para el footer de la tarjeta */
+.asset-card__footer {
+  display: flex;
+  justify-content: center; /* Cambiado de space-between a center */
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  border-top: 1px solid var(--border-color);
+  width: 100%;
+  gap: 2rem; /* Espacio entre elementos - ajusta este valor para más o menos separación */
+}
+
+/* Estilos para el contenedor de likes */
+.asset-card__likes {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.asset-card__likes-icon {
+  color: #ff4757; /* Color rojo para el corazón */
+  font-size: 1rem;
+}
+
+.asset-card__likes-count {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+/* Estilos para el contenedor de descargas */
+.asset-card__downloads {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.asset-card__downloads-icon {
+  color: var(--accent-color); /* Color acento para el icono de descarga */
+  font-size: 1rem;
+}
+
+.asset-card__downloads-count {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 600px) {
+  .form {
+    width: 90%;
+  }
+
+  .heading h1 {
+    font-size: 2rem;
+  }
+
+  .heading p {
+    font-size: 1.5rem;
+  }
+}
+
+

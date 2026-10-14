@@ -1,0 +1,158 @@
+/*--------------------------------------------------------------*/
+/* NAVBAR */
+
+@import '../App.css';
+
+.navbar {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: var(--primary-color);;
+    padding: 1rem;
+    position: relative;
+  }
+  
+  .navbar__toggle {
+    display: none;
+    background: none;
+    border: 2px solid var(--white-color);
+    color: var(--white-color);
+    font-size: 1.5rem;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /* Gap y padding-left dinámicos con clamp */
+  .navbar__list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: clamp(0.3rem, 1vw, 1rem); /* de 1rem a 0.3rem según ancho */
+    margin: 0;
+    padding-left: clamp(0rem, 25vw, 250px); /* desaparece dinámicamente */
+    transition: gap 0.3s ease, padding-left 0.3s ease;
+  }
+  
+  .navbar__list li {
+    font-size: 1rem;
+    position: relative;
+  }
+  
+  .navbar__list li a {
+    text-decoration: none;
+    color: var(--white-color-no-cambia);
+    background: none;
+    border: none;
+    padding: 8px 16px;   /* conservar área clicable */
+    font-weight: bold;   /* opcional: mantiene el énfasis */
+  }
+  
+  .navbar__list li a.active {
+    background-color: var(--secondary-color); /* Fondo para el enlace activo */
+    color: var(--white-color-no-cambia); /* Color del texto para el enlace activo */
+    border-radius: 5px; /* Bordes redondeados para el enlace activo */
+  }
+  
+  .navbar__list li a:hover {
+    text-decoration: none;
+    background: var(--secondary-color);
+    color: var(--white-color-no-cambia);
+    border-radius: 5px; /* Bordes redondeados para el hover */
+  }
+
+  /* Estilos para el menú desplegable de etiquetas */
+  .category-item {
+    position: relative;
+  }
+
+  .tags-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    background-color: var(--white-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    min-width: 200px;
+
+    display: block;
+    overflow: hidden;
+    animation: fadeIn 0.2s ease-in-out;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+
+
+  .tags-dropdown h4 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+    font-size: 1rem;
+    border-bottom: 1px solid var(--background-color);
+    padding-bottom: 0.5rem;
+  }
+
+  .tags-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .tags-list li {
+    margin-bottom: 0.25rem;
+  }
+
+  .tag-button {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    padding: 0.5rem;
+    text-align: left;
+    width: 100%;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.2s, color 0.2s;
+  }
+
+  .tag-button:hover {
+    background-color: var(--background-color);
+    color: var(--etiquetas-tag);
+  }
+  
+  /* Menú desplegable para móviles */
+  @media (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .navbar__toggle {
+      display: block;
+    }
+  
+    .navbar__list {
+      flex-direction: column;
+      gap: 1.2rem;
+      padding-left: 0;
+      margin-top: 1rem;
+      display: none;
+      width: 100%;
+      align-items: center;
+    }
+  
+    .navbar__list.open {
+      display: flex;
+    }
+  
+    .navbar__list li a {
+      width: auto;
+      text-align: center;
+    }
+
+
+  }

@@ -1,0 +1,110 @@
+/* Modificar estos estilos existentes o añadirlos al final del archivo */
+
+@import '../App.css';
+
+/* Centrar el contenido de la página */
+.account-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* Asegurarnos que el contenido esté centrado */
+.content {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Asegurar que el formulario esté centrado y ocupe el ancho adecuado */
+.content form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-image {
+  width: 100px; /* Reducido de 150px */
+  height: 100px; /* Reducido de 150px */
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 4px 8px var(--shadow-color);
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--background-color);
+}
+
+/* Centrar el contenedor de imagen de perfil */
+.profile-image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  width: 100%;
+}
+
+.profile-image__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-image__placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  font-size: 2rem; /* Reducido de 3rem */
+  font-weight: bold;
+}
+
+.image-preview img {
+  width: 100px; /* Reducido de 150px */
+  height: 100px; /* Reducido de 150px */
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+/* Centrar el grupo de formulario y hacer que tenga un ancho consistente */
+.form-group {
+  width: 100%;
+  max-width: 500px;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+/* Centrar los botones del formulario */
+.form-buttons {
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+/* Estilo para la imagen pendiente de guardar */
+.pending-image-badge {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--accent-color);
+  text-align: center;
+}
+
+/* Estilo para el texto de ayuda */
+.form-text {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 0.85rem;
+  color: var(--light-text-color);
+}

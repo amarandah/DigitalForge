@@ -1,0 +1,169 @@
+@import '../App.css';
+
+.sidebar {
+  position: fixed;
+  bottom: 120px;
+  right: 20px;
+  width: 300px;
+  height: 535px;
+  background-color: var(--secondary-color);
+  color: var(--white-color);
+  box-shadow: -2px 4px 10px var(--shadow-color); 
+  z-index: 1000;
+  padding: 2rem;
+  border-radius: 8px;
+  overflow-y: auto;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  opacity: 1;
+}
+
+.sidebar.hidden {
+  transform: translate(100%, 0);
+  opacity: 0;
+}
+
+.close-sidebar {
+  position: absolute;
+  top: 10px;
+  left: 15px; 
+  background: none;
+  border: none;
+  font-size: 3rem;
+  cursor: pointer;
+  color: var(--white-color-no-cambia);
+}
+
+.close-sidebar:hover {
+  color: var(--red-color);
+}
+
+.sidebar-content {
+  font-family: 'Poppins', sans-serif; 
+  color: var(--white-color-no-cambia); /* Texto 'Accesibilidad'*/
+  font-size: 20px;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.theme-button {
+  display: block;
+  width: 100%;
+  padding: 10px 15px;
+  margin: 10px 0;
+  background-color: var(--primary-color);
+  color: var(--white-color-no-cambia);
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.theme-button:hover {
+  color: var(--accent-color);
+  background-color: var(--hover-color);
+}
+
+.font-slider-container {
+  margin-top: 20px;
+  text-align: left;
+}
+
+.font-slider-container label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+  color: var(--white-color-no-cambia);
+}
+
+.font-slider-container input[type="range"] {
+  width: 100%;
+  appearance: none;
+  height: 8px;
+  border-radius: 5px;
+  background: var(--primary-color);
+  outline: none;
+  transition: background 0.3s;
+  cursor: pointer;
+}
+
+.font-slider-container input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--white-color);
+  border: 2px solid var(--accent-color);
+  box-shadow: 0 0 5px var(--shadow-color);
+  transition: background 0.3s ease;
+}
+
+.font-slider-container input[type="range"]::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--white-color);
+  border: 2px solid var(--accent-color);
+  box-shadow: 0 0 5px var(--shadow-color);
+}
+
+.font-size-indicator {
+  margin-top: 8px;
+  font-size: 0.85rem;
+  text-align: right;
+  color: var(--white-color-no-cambia);
+}
+
+.font-size-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.reset-button {
+  background-color: transparent;
+  border: 1px solid var(--white-color);
+  color: var(--white-color);
+  font-size: 0.8rem;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.reset-button:hover {
+  background-color: var(--hover-color);
+  color: var(--accent-color);
+}
+
+/* Estilo especial para el botón de modo daltónico */
+.theme-button[onClick*="setColorblindThemeGreen"] {
+  background-color: #0072b9;
+  border: 1px solid #ffb700;
+}
+
+.theme-button[onClick*="setColorblindThemeGreen"]:hover {
+  background-color: #ffb700;
+  color: #000000;
+}
+
+.sidebar-content h3 {
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* Estilo especial para el botón de modo daltónico azul */
+.theme-button.colorblind-blue {
+  background-color: #d63384; /* Magenta */
+  border: 1px solid #ff9500; /* Naranja */
+}
+
+.theme-button.colorblind-blue:hover {
+  background-color: #ff9500; /* Naranja */
+  color: #000000;
+}

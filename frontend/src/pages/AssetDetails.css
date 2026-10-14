@@ -1,0 +1,313 @@
+.asset-details__back-outer {
+  padding: 1rem 2rem;
+  width: 100%;
+  text-align: left;
+  max-width: 100%;
+}
+
+/* Modificar el estilo existente para el botón */
+.asset-details__back-outer .btn {
+  background-color: transparent;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background-color 0.2s;
+}
+
+
+
+.asset-details {
+  padding: 1rem 8rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* 🔙 Botón “Volver” centrado */
+.asset-details__back {
+  text-align: left;
+  margin-bottom: 2rem;
+}
+
+.asset-details__title {
+  text-align: center;
+  font-size: 2rem;
+  margin: 1rem 0 2rem; /* espacio encima de las columnas */
+}
+
+/* 🗂 Grid de dos columnas */
+.asset-details__grid {
+  display: grid;
+  grid-template-columns: 70% 30%;
+  row-gap:    2rem;
+  column-gap: 5rem;
+}
+
+/* Columnas */
+.asset-details__col {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* 👉 Izquierda: imágenes y reproductor */
+.asset-details__main-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.asset-details__player audio,
+.asset-details__player video {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.asset-details__additional-image-vertical img {
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+/* 👤 Derecha: autor y metadatos */
+.asset-details__author {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.asset-details__author-name {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.asset-details__category,
+.asset-details__tags {
+  font-size: 0.95rem;
+  color: var(--text-color);
+}
+
+.category-link {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.category-link:hover {
+  text-decoration: underline;
+}
+
+.tag-pill {
+  display: inline-block;
+  background: var(--tag-pill);
+  color: var(--white-color-no-cambia);
+  padding: 0.25rem 0.6rem;
+  border-radius: 1rem;
+  margin-right: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+/* Descripción */
+.asset-details__description h2 {
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+}
+.asset-details__description p {
+  line-height: 1.5;
+}
+
+/* Botones de acción */
+.asset-details__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+
+.like-button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: var(--text-color);
+}
+.like-button.liked {
+  color: var(--red-color);
+}
+
+.asset-details__owner-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;            /* espacio entre botones */
+}
+
+/* btn-download: ya tendrá tus estilos de Descargar */
+.btn-download {
+  background: var(--primary-color);
+  color: var(--white-color-no-cambia);
+  border: none;
+  /* padding vertical | horizontal */
+  padding: 0.75rem 2rem;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  font-weight: 500;
+  /* ancho fijo para que los tres queden iguales */
+  width: 200px;
+}
+
+/* Línea separadora */
+.separator {
+  border: 0;
+  height: 1px;
+  background-color: var(--gris-claro); /* O usa el color que prefieras */
+  margin: 1rem 0;
+  width: 100%;
+}
+
+/* Comentarios */
+.asset-details__comments {
+  margin-top: 2rem;
+}
+
+.asset-details__comments h2 {
+  margin-bottom: 1.5rem;
+  font-size: 1.4rem;
+  color: var(--text-color);
+  border-bottom: 2px solid var(--tag-pill);
+  padding-bottom: 0.5rem;
+  display: inline-block;
+}
+
+.comment-form {
+  margin-bottom: 2.5rem;
+  background-color: var(--comment-bg);
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px var(--shadow-color);
+}
+
+.comment-form textarea {
+  width: 100%;
+  min-height: 80px;
+  padding: 0.7rem;
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+  margin-bottom: 0.8rem;
+  font-family: inherit;
+  transition: border-color 0.3s;
+  resize: vertical;
+  background-color: var(--comment-text-bg);
+  color: var(--text-color);
+}
+
+.comment-form textarea:focus {
+  border-color: var(--primary-color);
+  outline: none;
+  box-shadow: 0 0 0 2px var(--focus-shadow);
+}
+
+.btn-comment {
+  background: var(--primary-color);
+  color: var(--white-color-no-cambia);
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.btn-comment:hover {
+  background-color: var(--secondary-color);
+}
+
+.comment {
+  border: none;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1.2rem;
+  background-color: var(--comment-bg);
+  box-shadow: 0 2px 5px var(--shadow-color);
+  transition: transform 0.2s;
+}
+
+.comment:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px var(--shadow-color);
+}
+
+.comment-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.8rem;
+}
+
+.comment-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--white-color-no-cambia);
+  box-shadow: 0 2px 4px var(--shadow-color);
+}
+
+.comment-avatar-placeholder {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primary-color);
+  color: var(--white-color-no-cambia);
+  font-weight: bold;
+  box-shadow: 0 2px 4px var(--shadow-color);
+}
+
+.comment-header strong {
+  color: var(--text-color);
+  font-size: 1rem;
+}
+
+.comment-header small {
+  color: var(--comment-date);
+  font-size: 0.8rem;
+}
+
+.comment-text {
+  line-height: 1.5;
+  color: var(--text-color);
+  background-color: var(--comment-text-bg);
+  border-radius: 6px;
+  padding: 0.8rem;
+}
+
+
+
+@media (max-width: 900px) {
+  /* Cuando el ancho sea menor de 900px, apila las columnas */
+  .asset-details__grid {
+    grid-template-columns: 1fr !important;
+  }
+}

@@ -1,0 +1,3 @@
+{
+  "ignore": ["backend/data/dropbox_token.json"]
+}

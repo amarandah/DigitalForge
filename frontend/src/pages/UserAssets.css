@@ -1,0 +1,170 @@
+/* Estilos para la página de assets de usuario */
+
+.back-button-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+
+
+.user-profile-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 2rem auto;
+  width: 100%;
+  max-width: 600px;
+  padding: 1.5rem;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  overflow: hidden; /* Evita que el contenido sobresalga */
+}
+
+.profile-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid white;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  margin-bottom: 1.5rem;
+  min-width: 120px; /* Asegura el ancho mínimo */
+  min-height: 120px; /* Asegura la altura mínima */
+  flex-shrink: 0; /* Evita que la imagen se reduzca */
+}
+
+.profile-avatar-placeholder {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 2.5rem;
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  margin-bottom: 1.5rem;
+  min-width: 120px; /* Asegura el ancho mínimo */
+  min-height: 120px; /* Asegura la altura mínima */
+  flex-shrink: 0; /* Evita que el placeholder se reduzca */
+}
+
+.profile-username {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.8rem;
+}
+
+.profile-stats {
+  margin: 0 0 1rem 0;
+  color: var(--light-text-color);
+  font-size: 1.1rem;
+}
+
+.no-assets-message {
+  text-align: center;
+  margin: 3rem auto;
+}
+
+.asset-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.asset-image-container {
+  margin-bottom: 10px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.asset-card__thumb {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  cursor: pointer;
+}
+
+.asset-card__name {
+  cursor: pointer;
+}
+
+.asset-card__footer {
+  margin-top: 0.5rem;
+  display: flex;
+  justify-content: center;
+  padding: 0.5rem;
+  border-top: 1px solid var(--border-color);
+  width: 100%;
+  gap: 2rem;
+}
+
+.asset-card__likes {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.asset-card__likes-icon {
+  color: #ff4757;
+  font-size: 1rem;
+}
+
+.asset-card__likes-count {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+.error-message {
+  text-align: center;
+  color: red;
+  margin: 2rem auto;
+  padding: 1rem;
+  background-color: rgba(255, 0, 0, 0.1);
+  border-radius: 8px;
+  max-width: 80%;
+}
+
+
+
+.asset-card__footer {
+  margin-top: 0.5rem;
+  display: flex;
+  justify-content: space-around; /* Cambiado a space-around para dar espacio entre likes y descargas */
+  padding: 0.5rem;
+  border-top: 1px solid var(--border-color);
+  width: 100%;
+}
+
+/* Estilos para el contenedor de likes (mantener) */
+.asset-card__likes {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+/* Estilos para el contenedor de descargas (nuevo) */
+.asset-card__downloads {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.asset-card__downloads-icon {
+  color: var(--accent-color);
+  font-size: 1rem;
+}
+
+.asset-card__downloads-count {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-color);
+}

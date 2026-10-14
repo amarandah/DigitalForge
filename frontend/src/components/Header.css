@@ -1,0 +1,242 @@
+/*--------------------------------------------------------------*/
+/* HEADER GENERAL */
+
+.header {
+  background-color: var(--primary-color);
+  padding-top: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+/*--------------------------------------------------------------*/
+/* TOPE: LOGO + BOTÓN BUSCAR + PERFIL */
+
+.header__top {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* LOGO */
+
+.header__logo img {
+  height: 80px;
+  display: block;
+}
+
+/* BOTÓN BUSCAR */
+
+.search-toggle {
+  display: none;
+  background: var(--white-color);
+  border: 2px solid  var(--black-color);
+  border-radius: 1rem;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: var(--black-color);
+}
+
+/* PERFIL / LOGIN */
+
+.header__actions {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+
+
+.btn {
+  background: var(--white-color);
+  border: 2px solid var(--black-color);
+  border-radius: 1rem;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  color: var(--black-color);;
+}
+
+.user-btn {
+  gap: 8px;
+}
+
+.user-avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 1px 2px var(--shadow-color);
+  flex-shrink: 0;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown__menu {
+  position: absolute;
+  top: 110%;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--white-color);
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 8px var(--shadow-color);
+  padding: 1rem 0; /* Aumentado el padding vertical */
+  min-width: 220px; /* Aumentado el ancho mínimo de 180px a 220px */
+  z-index: 10;
+}
+.dropdown__menu li {
+  width: 100%;
+  text-align: center;
+  margin: 0;
+  padding: 0 10px; /* Añadimos padding horizontal uniforme */
+  display: flex;
+  justify-content: center; /* Centrar contenido horizontalmente */
+  box-sizing: border-box; /* Para que el padding no afecte el ancho total */
+}
+
+.dropdown__menu li + li {
+  margin-top: 8px; /* Añade margen superior entre elementos consecutivos */
+}
+
+.dropdown__menu a,
+.dropdown__menu button {
+  display: block;
+  width: 100%; /* Cambiamos de auto a 100% para que ocupen todo el ancho disponible */
+  text-align: center;
+  padding: 0.7rem 0; /* Solo padding vertical */
+  background: none;
+  border: none;
+  color: var(--text-color);
+  font-size: 0.95rem;
+  margin: 0;
+  box-sizing: border-box;
+  border-radius: 0.3rem;
+}
+
+.dropdown__menu a:hover,
+.dropdown__menu button:hover {
+  background: var(--dropdown-menu);
+}
+
+.dropdown__logout {
+  color: var(--red-color) !important;
+}
+
+/*--------------------------------------------------------------*/
+/* ÚNICA BARRA DE BÚSQUEDA */
+
+.search-bar-container {
+  
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+
+
+
+.search-bar {
+  display: flex;
+  width: 100%;
+  max-width: 500px;
+  background: var(--white-color);
+  border-radius: 50px;
+  padding: 0.4rem 1rem;
+  box-shadow: 0 2px 4px var(--shadow-color);
+}
+
+.search-bar input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  border-radius: 50px;
+  padding: 0.4rem;
+}
+
+.search-bar button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+/*--------------------------------------------------------------*/
+/* RESPONSIVE */
+
+/* MÓVIL (≤768px) */
+
+@media (max-width: 768px) {
+  .header {
+    align-items: stretch;
+  }
+
+  .header__top {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .search-toggle {
+    display: inline-block;
+  }
+
+  .search-bar-container {
+    display: none;
+  }
+
+  .search-bar-container.visible {
+    display: flex;
+    margin-top: 1rem;
+    justify-content: center;
+  }
+}
+
+/* DESKTOP (≥769px) */
+
+@media (min-width: 769px) {
+  .search-toggle {
+    display: none !important;
+  }
+
+  .search-bar-container {
+    display: flex !important;
+   
+  }
+}
+
+
+
+
+/* Para mayor seguridad, también podemos resetear márgenes en todos los elementos del menú */
+.dropdown__menu, 
+.dropdown__menu li, 
+.dropdown__menu a,
+.dropdown__menu button {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+
+/* En Header.css */
+.logo-image {
+  content: url("../../public/logo_negro.png");
+  height: 80px;
+  display: block;
+}
+
+[data-theme="dark"] .logo-image {
+  content: url("../../public/logo_blanco.png");
+}

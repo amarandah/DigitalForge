@@ -1,0 +1,16 @@
+[build]
+  base = "frontend/"  # Carpeta donde está tu frontend
+  publish = "build/"  # Carpeta que se genera al construir
+  command = "npm run build"  # Comando para construir el frontend
+
+[[redirects]]
+  from = "/api/*"
+  to = "https://digitalforge-ua-backend.onrender.com/api/:splat"
+  status = 200
+  force = true
+  headers = {Access-Control-Allow-Origin = "*"}
+
+[[redirects]]
+  from = "/*"  # Cualquier ruta no encontrada
+  to = "/index.html"  # Redirige a index.html para que React Router funcione
+  status = 200  # Código de estado HTTP

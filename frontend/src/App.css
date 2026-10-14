@@ -1,0 +1,158 @@
+:root {
+  --primary-color: #007bff;
+  --secondary-color: #003366;
+  --accent-color: #00ff15;
+  --hover-color: #ff7b00;
+  --background-color: #f8f9fa;
+  --text-color: #333;
+  --text-color-no-cambia: #333;
+  --light-text-color: #666;
+  --white-color: #ffffff;
+  --white-color-no-cambia: #ffffff;
+  --black-color: #000000;
+  --black-color-no-cambia: #000000;
+  --red-color:#e53e3e;
+  --border-color: #e6e6e6;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --dropdown-menu: #f5f5f5;
+  --comment-form: #ddd;
+  --tag-pill: #4a76a8;
+  --gris-claro: #ccc;
+  --etiquetas-tag: #007bff;
+  --red-color-gradient: rgba(255, 44, 44, 0.5);
+  --blue-color-gradient: rgba(48, 48, 224, 0.5);
+
+  /* Nuevas variables para comentarios */
+  --comment-bg: #f9f9f9;
+  --comment-border: #e6e6e6;
+  --comment-text-bg: #ffffff;
+  --comment-date: #777;
+  --focus-shadow: rgba(0, 123, 255, 0.15);
+
+  /* Variables para badges de categoría */
+  --category-3d-color: #6200ea;
+  --category-2d-color: #2962ff;
+  --category-add-ons-color: #00c853;
+  --category-audio-color: #ff6d00;
+  --category-video-color: #dd2c00;
+}
+
+[data-theme="dark"] {
+  --primary-color: #003a79;
+  --secondary-color: #005ebd;
+  --accent-color: #00aa0e;
+  --hover-color: #bb5700;
+  --background-color: #000b49;
+  --text-color: #ffffff;
+  --light-text-color: #ffffff;
+  --white-color: #04003a;
+  --white-color-no-cambia: #ffffff;
+  --black-color: #ffffff;
+  --border-color: #001c46;
+  --shadow-color: rgba(255, 255, 255, 0.1);
+  --etiquetas-tag: #ffffff;
+
+  --red-color-gradient: rgba(155, 0, 0, 0.5);
+  --blue-color-gradient: rgba(0, 0, 146, 0.5);
+
+  /* Nuevas variables para dark mode */
+  --comment-bg: #001c3d;
+  --comment-border: #002a5a;
+  --comment-text-bg: #001428;
+  --comment-date: #aaaaaa;
+  --focus-shadow: rgba(0, 123, 255, 0.3);
+
+    /* Variables para badges de categoría en modo oscuro */
+  --category-3d-color: #9d46ff;
+  --category-2d-color: #5e8eff;
+  --category-add-ons-color: #2bff7e;
+  --category-audio-color: #ff9e4f;
+  --category-video-color: #ff6347;
+}
+
+/* Modo para daltónicos (deuteranopia - dificultad con el color verde) */
+[data-theme="colorblind-green"] {
+  --primary-color: #0072b9; /* Azul más distinguible */
+  --secondary-color: #004280; /* Azul oscuro */
+  --accent-color: #ffb700; /* Amarillo en lugar de verde */
+  --hover-color: #ff6a00; /* Naranja más distinguible */
+  --background-color: #f8f9fa;
+  --text-color: #000000; /* Negro para máximo contraste */
+  --light-text-color: #333333;
+  --white-color: #ffffff;
+  --black-color: #000000;
+  --border-color: #555555; /* Más oscuro para mayor visibilidad */
+  --shadow-color: rgba(0, 0, 0, 0.2); /* Mayor opacidad */
+  --etiquetas-tag: #0072b9;
+  
+  /* Colores para gradientes */
+  --red-color-gradient: rgba(128, 0, 128, 0.5); /* Púrpura en vez de rojo */
+  --blue-color-gradient: rgba(0, 114, 185, 0.5);
+  
+  /* Comentarios */
+  --comment-bg: #eef4ff; /* Azul muy claro */
+  --comment-border: #aabbcc;
+  --comment-text-bg: #ffffff;
+  --comment-date: #444444;
+  --focus-shadow: rgba(0, 114, 185, 0.3);
+  
+  /* Categorías - evitando verdes, usando colores más distinguibles */
+  --category-3d-color: #8400ff;
+  --category-2d-color: #0072b9;
+  --category-add-ons-color: #ffb700; /* Amarillo en lugar de verde */
+  --category-audio-color: #ff6a00; /* Naranja */
+  --category-video-color: #9c00c9; /* Púrpura */
+}
+
+/* Modo para daltónicos (tritanopia - dificultad con el color azul) */
+[data-theme="colorblind-blue"] {
+  --primary-color: #d63384; /* Magenta en lugar de azul */
+  --secondary-color: #7a0c41; /* Magenta oscuro */
+  --accent-color: #ff9500; /* Naranja */
+  --hover-color: #e74c3c; /* Rojo brillante */
+  --background-color: #f8f9fa;
+  --text-color: #000000; /* Negro para máximo contraste */
+  --light-text-color: #333333;
+  --white-color: #ffffff;
+  --black-color: #000000;
+  --border-color: #555555; /* Más oscuro para mayor visibilidad */
+  --shadow-color: rgba(0, 0, 0, 0.2);
+  --etiquetas-tag: #d63384;
+  
+  /* Colores para gradientes */
+  --red-color-gradient: rgba(231, 76, 60, 0.5); /* Rojo más brillante */
+  --blue-color-gradient: rgba(214, 51, 132, 0.5); /* Magenta en lugar de azul */
+  
+  /* Comentarios */
+  --comment-bg: #fff0f5; /* Rosa muy claro */
+  --comment-border: #d6a5b8;
+  --comment-text-bg: #ffffff;
+  --comment-date: #444444;
+  --focus-shadow: rgba(214, 51, 132, 0.3);
+  
+  /* Categorías - evitando azules, usando colores más distinguibles */
+  --category-3d-color: #d63384; /* Magenta */
+  --category-2d-color: #e74c3c; /* Rojo */
+  --category-add-ons-color: #ff9500; /* Naranja */
+  --category-audio-color: #f39c12; /* Amarillo-naranja */
+  --category-video-color: #9b59b6; /* Púrpura */
+}
+
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-float infinite 3s ease-in-out;
+  }
+}
+
+@keyframes App-logo-float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}

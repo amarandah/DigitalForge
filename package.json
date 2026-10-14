@@ -1,0 +1,49 @@
+{
+  "name": "digitalforge-ua",
+  "version": "1.0.0",
+  "description": "Proyecto UA",
+  "main": "server.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "server": "nodemon backend/server.js",
+    "client": "npm start --prefix frontend",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PabloElx/DigitalForge-UA.git"
+  },
+  "author": "Javier Castelló Ochoa, Pablo García Aljibe, Antonio Manuel Aranda Hortelano, Izan Quiles Jiménez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/PabloElx/DigitalForge-UA/issues"
+  },
+  "homepage": "https://github.com/PabloElx/DigitalForge-UA#readme",
+  "dependencies": {
+    "@react-three/drei": "^10.0.8",
+    "@react-three/fiber": "^9.1.2",
+    "@reduxjs/toolkit": "^2.6.1",
+    "axios": "^1.9.0",
+    "bcrypt": "^5.1.1",
+    "bcryptjs": "^3.0.2",
+    "color": "^5.0.0",
+    "colors": "^1.4.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "dropbox": "^10.34.0",
+    "express": "^4.21.2",
+    "express-async-handler": "^1.2.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.13.0",
+    "multer": "^1.4.5-lts.2",
+    "open": "^10.1.2",
+    "react-icons": "^5.5.0",
+    "react-redux": "^9.2.0",
+    "three": "^0.176.0",
+    "web-vitals": "^4.2.4"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "nodemon": "^3.1.9"
+  }
+}

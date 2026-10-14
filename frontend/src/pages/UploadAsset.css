@@ -1,0 +1,500 @@
+@import '../App.css';
+
+.upload-asset {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;           /* centra horizontalmente */
+    padding: 1rem;
+    box-sizing: border-box;    /* hace que padding no “hinche” el ancho */
+  }
+
+.upload-asset h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--text-color);
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    width: 100%;              /* ocupa todo el ancho de .upload-asset */
+    box-sizing: border-box;
+  }
+
+/* ─ COVER INPUT ─ */
+.cover-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.cover-input-wrapper {
+    display: block;
+    position: relative;
+    width: 100%;
+    padding-top: 75%;
+    /* 4:3 ratio */
+    background: var(--dropdown-menu);
+    border: 2px dashed var(--background-color);
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+/* El input invisible, pero por encima de todo */
+.cover-input-wrapper input[type="file"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 2;
+}
+
+/* Imagen o placeholder debajo, no capturan clics */
+.cover-input-wrapper img,
+.cover-placeholder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.cover-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #454545;
+    font-size: 0.9rem;
+    padding: 0.5rem;
+    text-align: center;
+}
+
+/* ─ TEXT FIELDS ─ */
+.fields-group .form-group {
+    margin-bottom: 1rem;
+}
+
+.fields-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.fields-group input,
+.fields-group textarea,
+.fields-group select {
+    width: 100%;
+    padding: 0.5rem;
+    box-sizing: border-box;
+    border: 4px solid var(--background-color);
+    border-radius: 4px;
+}
+
+/* ─ ADDITIONAL IMAGES INPUT ─ */
+.additional-input-wrapper {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0 1rem;
+}
+
+.additional-images-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2.5rem;
+    text-align: center;
+    cursor: pointer;
+}
+
+.additional-images-input {
+    width: 100%;
+    border: 2px dashed var(--tag-pill);
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    background-color: var(--background-color);
+}
+
+.additional-images-input:hover {
+    border-color: var(--primary-color);
+    background-color: var(--background-color);
+}
+
+.additional-images-file {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.upload-icon {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    height: 60px;
+    width: 60px;
+    border: 2px dashed var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.images-help {
+    color: var(--light-text-color);
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+}
+
+
+.file-format-hint {
+    color: var(--light-text-color);
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+    font-style: italic;
+}
+
+/* ─ ADDITIONAL PREVIEWS ─ */
+.additional-images-preview {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 2rem;
+}
+
+.preview-item {
+    position: relative;
+    border: 2px solid var(--background-color);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px var(--shadow-color);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+
+
+.preview-item img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    display: block;
+}
+
+.remove-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: rgba(0, 0, 0, 0.6);
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    line-height: 1;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s;
+}
+/* ─ SUBMIT BUTTON ─ */
+.submit-btn {
+    display: block;
+    margin: 2rem auto 0;
+    padding: 0.75rem 1.5rem;
+}
+
+.remove-btn:hover {
+    background: rgba(220, 53, 69, 0.8);
+}
+
+
+
+/* Añadir estos estilos a UploadAsset.css */
+
+.tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+.tag-checkbox {
+    display: flex;
+    align-items: center;
+    padding: 6px 12px;
+    border-radius: 16px;
+    background-color: var(--background-color);
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.tag-checkbox:hover {
+    background-color: var(--background-color);
+}
+
+.tag-checkbox.selected {
+    background-color: var(--primary-color);
+    color: var(--white-color-no-cambia);
+    transform: scale(1.05);
+}
+
+.tag-checkbox input {
+    margin-right: 8px;
+}
+
+.tags-help {
+    margin-top: 8px;
+    font-size: 0.8rem;
+    color: var(--light-text-color);
+    font-style: italic;
+}
+
+
+
+/* Estilos para la sección de descarga */
+.asset-details__download-section {
+    margin-top: 2rem;
+    background-color: var(--background-color);
+    border-radius: 8px;
+    border: 1px solid var(--background-color);
+    padding: 1.5rem;
+  }
+  
+  .asset-details__download-section h3 {
+    margin-bottom: 1rem;
+    color: var(--text-color);
+    font-size: 1.2rem;
+  }
+  
+  .download-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .file-info {
+    flex: 1;
+  }
+  
+  .file-size {
+    margin-left: 0.5rem;
+    color: var(--light-text-color);
+    font-size: 0.9rem;
+  }
+  
+  .btn-download {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    border: none;
+    border-radius: 4px;
+    padding: 0.75rem 1.5rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 4px var(--shadow-color);
+  }
+  
+  .btn-download:hover {
+    background-color: var(--tag-pill);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px var(--shadow-color);
+  }
+  
+  .btn-download:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px var(--shadow-color);
+  }
+  
+  .btn-download svg {
+    font-size: 1.1rem;
+  }
+  
+  /* Media query para dispositivos móviles */
+  @media (max-width: 768px) {
+    .download-info {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    
+    .btn-download {
+      width: 100%;
+      justify-content: center;
+      margin-top: 1rem;
+    }
+  }
+
+
+
+  /* Estilos para el input de archivo descargable */
+  .download-file-input {
+    position: relative;
+    margin-bottom: 0.5rem;
+    width: 100%;
+    border: 2px dashed var(--tag-pill);
+    border-radius: 8px;
+    padding: 2rem;
+    background-color: var(--background-color);
+    transition: all 0.3s ease;
+  }
+  
+  .download-file-input:hover {
+    background-color: var(--background-color);
+    border-color: var(--tag-pill);
+  }
+  
+  .download-file {
+    position: relative;
+    width: 100%;
+    display: block;
+  }
+  
+  .download-file::file-selector-button {
+    font-weight: 500;
+    color: var(--white-color-no-cambia);
+    background-color: var(--primary-color);
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 4px;
+    margin-right: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .download-file::file-selector-button:hover {
+    background-color: var(--secondary-color);
+  }
+  
+  .selected-file {
+    margin-top: 1rem;
+    padding: 0.8rem;
+    background-color: var(--background-color);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .selected-file p {
+    margin: 0;
+    font-size: 0.95rem;
+    word-break: break-word;
+  }
+  
+  .file-help {
+    color: var(--light-text-color);
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+  }
+  
+  /* Estilo para pantallas pequeñas */
+  @media (max-width: 768px) {
+    .download-file-input {
+      padding: 1rem;
+    }
+    
+    .download-file::file-selector-button {
+      padding: 0.5rem 1rem;
+      font-size: 0.9rem;
+    }
+  }
+
+
+  .full-width {
+    width: 100% !important;
+    max-width: 100% !important;
+    grid-column: 1 / -1 !important;  /* Ocupa todas las columnas del grid */
+    margin: 2rem 0;
+    box-sizing: border-box;
+    display: block !important;
+    clear: both;
+  }
+
+  /* Asegurar que el contenedor del input de archivo ocupe todo el ancho */
+.form-group.full-width {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+  }
+
+
+
+  .progress-container {
+  width: 100%;
+  background-color: var(--background-color);
+  border-radius: 4px;
+  margin: 1.5rem 0;
+  height: 24px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: var(--primary-color);
+  border-radius: 4px;
+  transition: width 0.3s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.progress-text {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white-color);
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+/* Estilos para botón desactivado */
+.submit-btn:disabled {
+  background-color: var(--light-text-color);
+  cursor: not-allowed;
+  opacity: 0.7;
+  transform: none;
+  box-shadow: none;
+}
+
+.submit-btn:disabled:hover {
+  transform: none;
+  box-shadow: none;
+  background-color: var(--light-text-color);
+  border-color: var(--light-text-color);
+}
+
+.preview-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 10px var(--shadow-color);
+}

@@ -1,0 +1,111 @@
+@import '../App.css';
+@import './Dashboard.css';
+
+.downloaded-assets {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: var(--background-color);
+}
+
+.downloaded-assets h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  color: var(--secondary-color);
+}
+
+.asset-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.asset-card {
+  background-color: var(--white-color);
+  border-radius: 12px;
+  box-shadow: 0 4px 10px var(--shadow-color);
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border: 1px solid var(--border-color);
+}
+
+.asset-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 14px var(--shadow-color);
+}
+
+.asset-link {
+  color: inherit;
+  text-decoration: none;
+  width: 100%;
+  display: block;
+}
+
+/* Contenedor de imagen con posición relativa para el badge */
+.image-container {
+  position: relative;
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border-color);
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  background-color: var(--dropdown-menu);
+}
+
+.asset-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.asset-name {
+  font-size: 1.1rem;
+  margin: 0.75rem 0;
+  color: var(--text-color);
+  transition: color 0.2s ease;
+  padding: 0 1rem;
+}
+
+.asset-card:hover .asset-name {
+  color: var(--hover-color);
+}
+
+/* Estadísticas del asset (likes y descargas) */
+.asset-stats {
+  display: flex;
+  justify-content: center;
+  padding: 0.5rem;
+  margin-top: auto;
+  border-top: 1px solid var(--border-color);
+  width: 100%;
+  gap: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.asset-likes, .asset-downloads {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.asset-likes-icon {
+  color: var(--red-color);
+  font-size: 1rem;
+}
+
+.asset-downloads-icon {
+  color: var(--accent-color);
+  font-size: 1rem;
+}
+
+.asset-likes-count, .asset-downloads-count {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-color);
+}
